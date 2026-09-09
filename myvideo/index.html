@@ -2,9 +2,9 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<title>Imagine Factory</title>
+<title>MyVideo — Imagine Factory</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="상상연구소(Imagine Factory) — 개인 미디어를 위한 소프트웨어를 만듭니다.">
+<meta name="description" content="MyVideo — 폴더를 고르면 라이브러리가 되는 동영상 플레이어. NAS, SMB, WebDAV 영상을 한 곳에.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -85,7 +85,6 @@
   a:hover { color: var(--accent); }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
 
-  /* ---------- top bar (shared with /privacy/) ---------- */
   .topbar {
     position: sticky;
     top: 0;
@@ -145,11 +144,10 @@
     background: var(--accent-soft);
   }
 
-  /* ---------- hero ---------- */
   .hero {
     max-width: 700px;
     margin: 0 auto;
-    padding: 76px 28px 20px;
+    padding: 64px 28px 8px;
   }
   .eyebrow {
     font-family: "IBM Plex Mono", monospace;
@@ -158,78 +156,22 @@
     text-transform: uppercase;
     color: var(--text-faint);
     margin: 0 0 12px;
-  }
-  .hero h1 {
-    font-size: 40px;
-    margin: 0 0 14px;
-    letter-spacing: -0.01em;
-  }
-  .hero .lede {
-    font-size: 18px;
-    color: var(--text-muted);
-    max-width: 46ch;
-    margin: 0;
-  }
-
-  /* ---------- layout ---------- */
-  main {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px 28px 90px;
-  }
-  section + section {
-    margin-top: 56px;
-    padding-top: 48px;
-    border-top: 1px solid var(--border);
-  }
-  h2 {
-    font-size: 22px;
-    margin: 0 0 16px;
-    letter-spacing: -0.005em;
-  }
-  p { margin: 0 0 16px; color: var(--text); }
-  p:last-child { margin-bottom: 0; }
-
-  /* product card */
-  .product-card {
-    display: flex;
-    gap: 18px;
-    align-items: flex-start;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 22px 24px;
-    box-shadow: 0 1px 2px var(--shadow);
-  }
-  .product-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    background: var(--accent-soft);
-    border: 1px solid var(--accent-soft-border);
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    gap: 8px;
   }
-  .product-icon svg { width: 22px; height: 22px; fill: var(--accent-strong); }
-  .product-body h3 {
-    font-size: 17px;
-    margin: 0 0 4px;
-  }
-  .product-body p { margin: 0 0 10px; color: var(--text-muted); font-size: 14.5px; }
   .status-chip {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     font-family: "IBM Plex Mono", monospace;
-    font-size: 11.5px;
+    font-size: 11px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--text-faint);
     border: 1px solid var(--border-strong);
     border-radius: 999px;
-    padding: 4px 10px;
+    padding: 3px 10px;
   }
   .status-chip::before {
     content: "";
@@ -238,25 +180,105 @@
     border-radius: 50%;
     background: var(--text-faint);
   }
-
-  /* contact */
-  .contact-line {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    font-size: 15px;
+  .hero h1 {
+    font-size: 38px;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
   }
-  .contact-line dt {
+  .hero .lede {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 50ch;
+    margin: 0;
+  }
+
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 28px 90px;
+  }
+  section + section {
+    margin-top: 52px;
+    padding-top: 44px;
+    border-top: 1px solid var(--border);
+  }
+  h2 {
+    font-size: 21px;
+    margin: 0 0 20px;
+    letter-spacing: -0.005em;
+  }
+  h3 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 0 6px;
+  }
+  p { margin: 0 0 16px; color: var(--text); }
+  p:last-child { margin-bottom: 0; }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: 0 1px 2px var(--shadow);
+  }
+  .feature-num {
     font-family: "IBM Plex Mono", monospace;
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-faint);
-    width: 88px;
+    color: var(--accent-strong);
+    margin: 0 0 8px;
+  }
+  .feature-card p { font-size: 14.5px; color: var(--text-muted); margin: 0; }
+
+  .in-player ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .in-player li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+  }
+  .in-player li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    margin-top: 9px;
+    border-radius: 50%;
+    background: var(--accent);
     flex-shrink: 0;
   }
-  .contact-line dd { margin: 0; }
-  dl.contact-list { display: flex; flex-direction: column; gap: 10px; margin: 0; }
+
+  .cta-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent-strong); background: var(--accent-soft); }
 
   footer {
     max-width: 700px;
@@ -272,14 +294,16 @@
   footer a { color: var(--text-muted); }
 
   @media (max-width: 560px) {
-    .hero { padding: 52px 18px 16px; }
-    .hero h1 { font-size: 29px; }
+    .hero { padding: 44px 18px 6px; }
+    .hero h1 { font-size: 27px; }
     main { padding: 16px 18px 70px; }
     .topbar-inner { padding: 12px 18px; }
-    h2 { font-size: 19px; }
-    .product-card { flex-direction: column; }
+    h2 { font-size: 18px; }
+    .feature-grid { grid-template-columns: 1fr; }
   }
 </style>
+</head>
+<body>
 
 <div class="topbar">
   <div class="topbar-inner">
@@ -290,48 +314,74 @@
       Imagine Factory
     </a>
     <nav class="jump-links">
-      <a href="#products">앱</a>
-      <a href="#contact">문의</a>
+      <a href="/privacy/">개인정보처리방침</a>
     </nav>
   </div>
 </div>
 
 <div class="hero">
-  <p class="eyebrow">상상연구소 · Imagine Factory</p>
-  <h1>상상한 것을 만드는 곳</h1>
-  <p class="lede">개인이 소유한 미디어를 더 잘 다루기 위한 소프트웨어를 만듭니다. 서버도, 광고도, 계정도 없이 — 사용자의 기기와 사용자가 지정한 저장소 사이에서만 동작하는 앱을 지향합니다.</p>
+  <p class="eyebrow">
+    <span class="status-chip">출시 준비 중</span>
+  </p>
+  <h1>MyVideo</h1>
+  <p class="lede">나만의 미디어 라이브러리를 가장 쉽게 만드는 방법. 파일 목록도, 미디어 서버도 없는 동영상 플레이어입니다.</p>
 </div>
 
 <main>
-  <section id="products">
-    <h2>만든 것</h2>
-    <div class="product-card">
-      <div class="product-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7zm5 2v6l5-3-5-3z"/></svg>
+  <section>
+    <p>기기, NAS, 그 밖의 저장소에서 원하는 폴더만 골라 담으세요. 별도의 미디어 서버를 설치하고 설정할 필요가 없습니다. 여기저기 흩어져 있던 영상을 한 곳에 모아, 직접 구성한 컬렉션으로 정리해 줍니다.</p>
+  </section>
+
+  <section>
+    <h2>핵심 기능 4가지</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <p class="feature-num">01</p>
+        <h3>폴더만 고르면 컬렉션 완성</h3>
+        <p>원하는 폴더를 고르세요. 파일 목록이 아니라, 폴더 하나가 그대로 컬렉션이 되고 표지는 영상에서 직접 뽑아 줍니다.</p>
       </div>
-      <div class="product-body">
-        <h3>MyVideo</h3>
-        <p>나만의 미디어 라이브러리를 가장 쉽게 만드는 방법. 파일 목록도, 미디어 서버도 없는 동영상 플레이어입니다. 폴더만 고르면 컬렉션이 되고, 기기·NAS·WebDAV·SMB에 흩어진 영상을 한 곳에서 봅니다.</p>
-        <span class="status-chip">출시 준비 중</span>
-        <p style="margin-top:12px;"><a href="/myvideo/">자세히 보기 →</a></p>
+      <div class="feature-card">
+        <p class="feature-num">02</p>
+        <h3>흩어진 영상을 한 곳에</h3>
+        <p>기기 저장소, SMB 공유 폴더, WebDAV 서버의 영상을 하나의 라이브러리에서 봅니다.</p>
+      </div>
+      <div class="feature-card">
+        <p class="feature-num">03</p>
+        <h3>나만의 공간 — 보안 폴더</h3>
+        <p>남에게 보이고 싶지 않은 영상은 PIN으로 잠가 두세요.</p>
+      </div>
+      <div class="feature-card">
+        <p class="feature-num">04</p>
+        <h3>TV로 보는 두 가지 방법</h3>
+        <p>폰에서는 구글 캐스트로 TV에 — 폰이든 PC든 NAS든. 안드로이드TV 앱에서는 리모컨·키보드 버튼을 원하는 기능으로 바꿔 쓸 수 있습니다.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>문의</h2>
-    <dl class="contact-list">
-      <div class="contact-line">
-        <dt>이메일</dt>
-        <dd><a href="mailto:support@imaginefactory.kr">support@imaginefactory.kr</a></dd>
-      </div>
-    </dl>
+  <section class="in-player">
+    <h2>재생 화면에서</h2>
+    <ul>
+      <li>자막 크기·배경 조절, 옛 인코딩(CP949 등) 자동 변환</li>
+      <li>프레임 단위로 정확한 구간 자르기, GIF 내보내기</li>
+      <li>메모를 붙이는 책갈피, 원하는 구간 반복재생</li>
+      <li>보는 중 화면 캡처 — 저장하거나 표지로 등록</li>
+      <li>화면 속 화면(PIP), 모든 영상에서 이어보기</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>더 알아보기</h2>
+    <p>MyVideo가 다루는 데이터와 그렇지 않은 데이터를 자세히 설명한 문서입니다.</p>
+    <div class="cta-row">
+      <a class="btn" href="/privacy/">개인정보처리방침 보기</a>
+    </div>
   </section>
 </main>
 
 <footer>
   <span>상상연구소 (Imagine Factory)</span>
-  <span><a href="/privacy/">Privacy Policy</a></span>
+  <span><a href="/">홈으로</a></span>
 </footer>
 
+</body>
 </html>
