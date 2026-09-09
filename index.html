@@ -1,5 +1,10 @@
-<title>MyVideo Privacy Policy</title>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Imagine Factory</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="상상연구소(Imagine Factory) — 개인 미디어를 위한 소프트웨어를 만듭니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +22,6 @@
     --accent-strong: #045f54;
     --accent-soft: #e3f2ee;
     --accent-soft-border: #bfdcd4;
-    --code-bg: #eef3f0;
     --shadow: rgba(23, 33, 29, 0.06);
     color-scheme: light;
   }
@@ -36,7 +40,6 @@
       --accent-strong: #7ce3d4;
       --accent-soft: #17332e;
       --accent-soft-border: #24473f;
-      --code-bg: #1d2822;
       --shadow: rgba(0, 0, 0, 0.35);
       color-scheme: dark;
     }
@@ -55,7 +58,6 @@
     --accent-strong: #7ce3d4;
     --accent-soft: #17332e;
     --accent-soft-border: #24473f;
-    --code-bg: #1d2822;
     --shadow: rgba(0, 0, 0, 0.35);
     color-scheme: dark;
   }
@@ -79,15 +81,11 @@
     color: var(--text);
   }
 
-  code, .mono {
-    font-family: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  }
-
   a { color: var(--accent-strong); text-decoration: underline; text-decoration-color: var(--accent-soft-border); text-decoration-thickness: 1px; }
   a:hover { color: var(--accent); }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
 
-  /* ---------- top bar ---------- */
+  /* ---------- top bar (shared with /privacy/) ---------- */
   .topbar {
     position: sticky;
     top: 0;
@@ -114,6 +112,7 @@
     font-weight: 600;
     font-size: 15px;
     color: var(--text);
+    text-decoration: none;
   }
   .brand-mark {
     width: 22px;
@@ -146,15 +145,11 @@
     background: var(--accent-soft);
   }
 
-  /* ---------- layout ---------- */
-  main {
+  /* ---------- hero ---------- */
+  .hero {
     max-width: 700px;
     margin: 0 auto;
-    padding: 56px 28px 90px;
-  }
-
-  .doc-header {
-    margin-bottom: 40px;
+    padding: 76px 28px 20px;
   }
   .eyebrow {
     font-family: "IBM Plex Mono", monospace;
@@ -162,82 +157,106 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-faint);
-    margin: 0 0 10px;
+    margin: 0 0 12px;
   }
-  .doc-header h1 {
-    font-size: 34px;
-    margin: 0 0 8px;
+  .hero h1 {
+    font-size: 40px;
+    margin: 0 0 14px;
     letter-spacing: -0.01em;
   }
-  .doc-header .updated {
+  .hero .lede {
+    font-size: 18px;
     color: var(--text-muted);
-    font-size: 14.5px;
+    max-width: 46ch;
     margin: 0;
   }
 
-  section.lang-block { padding-top: 8px; }
-  section.lang-block + section.lang-block {
-    margin-top: 64px;
+  /* ---------- layout ---------- */
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 28px 90px;
+  }
+  section + section {
+    margin-top: 56px;
     padding-top: 48px;
     border-top: 1px solid var(--border);
   }
-
   h2 {
     font-size: 22px;
-    margin: 44px 0 14px;
+    margin: 0 0 16px;
     letter-spacing: -0.005em;
   }
-  section.lang-block > h2:first-of-type,
-  .doc-header + section.lang-block h2:first-child {
-    margin-top: 0;
-  }
-
   p { margin: 0 0 16px; color: var(--text); }
-  ul { margin: 0 0 16px; padding-left: 22px; }
-  li { margin-bottom: 10px; }
-  li:last-child { margin-bottom: 0; }
-  strong { font-weight: 600; }
+  p:last-child { margin-bottom: 0; }
 
-  /* summary callout */
-  .callout {
+  /* product card */
+  .product-card {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    box-shadow: 0 1px 2px var(--shadow);
+  }
+  .product-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
     background: var(--accent-soft);
     border: 1px solid var(--accent-soft-border);
-    border-left: 3px solid var(--accent);
-    border-radius: 8px;
-    padding: 18px 20px;
-    margin: 0 0 28px;
-    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
-  .callout p:last-child { margin-bottom: 0; }
-  .callout strong { color: var(--accent-strong); }
-
-  /* permissions table */
-  .table-scroll { overflow-x: auto; margin: 0 0 20px; border: 1px solid var(--border); border-radius: 8px; }
-  table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 480px; }
-  th, td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  thead th {
+  .product-icon svg { width: 22px; height: 22px; fill: var(--accent-strong); }
+  .product-body h3 {
+    font-size: 17px;
+    margin: 0 0 4px;
+  }
+  .product-body p { margin: 0 0 10px; color: var(--text-muted); font-size: 14.5px; }
+  .status-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-family: "IBM Plex Mono", monospace;
     font-size: 11.5px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--text-faint);
-    background: var(--surface-raised);
-    font-weight: 500;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    padding: 4px 10px;
   }
-  tbody tr:last-child td { border-bottom: none; }
-  td.perm { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--accent-strong); white-space: nowrap; }
-  td.why { color: var(--text-muted); }
+  .status-chip::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-faint);
+  }
 
-  .change-note {
-    background: var(--surface-raised);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px 20px;
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-top: 40px;
+  /* contact */
+  .contact-line {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 15px;
   }
-  .change-note strong { color: var(--text); }
+  .contact-line dt {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-faint);
+    width: 88px;
+    flex-shrink: 0;
+  }
+  .contact-line dd { margin: 0; }
+  dl.contact-list { display: flex; flex-direction: column; gap: 10px; margin: 0; }
 
   footer {
     max-width: 700px;
@@ -253,133 +272,66 @@
   footer a { color: var(--text-muted); }
 
   @media (max-width: 560px) {
-    .doc-header h1 { font-size: 27px; }
-    main { padding: 40px 18px 70px; }
+    .hero { padding: 52px 18px 16px; }
+    .hero h1 { font-size: 29px; }
+    main { padding: 16px 18px 70px; }
     .topbar-inner { padding: 12px 18px; }
     h2 { font-size: 19px; }
+    .product-card { flex-direction: column; }
   }
 </style>
 
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="brand">
+    <a class="brand" href="/">
       <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7zm5 2v6l5-3-5-3z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5zm0 2.3 6.7 3.7-6.7 3.7-6.7-3.7L12 4.3zM5 9.2l6 3.3v6.9l-6-3.3V9.2zm8 10.2v-6.9l6-3.3v6.7l-6 3.5z"/></svg>
       </span>
-      MyVideo
-    </div>
+      Imagine Factory
+    </a>
     <nav class="jump-links">
-      <a href="#en">English</a>
-      <a href="#ko">한국어</a>
+      <a href="#products">앱</a>
+      <a href="#contact">문의</a>
     </nav>
   </div>
 </div>
 
+<div class="hero">
+  <p class="eyebrow">상상연구소 · Imagine Factory</p>
+  <h1>상상한 것을 만드는 곳</h1>
+  <p class="lede">개인이 소유한 미디어를 더 잘 다루기 위한 소프트웨어를 만듭니다. 서버도, 광고도, 계정도 없이 — 사용자의 기기와 사용자가 지정한 저장소 사이에서만 동작하는 앱을 지향합니다.</p>
+</div>
+
 <main>
-  <div class="doc-header">
-    <p class="eyebrow">Privacy Policy</p>
-    <h1>How MyVideo handles your data</h1>
-    <p class="updated">Last updated September 5, 2026 · 최종 수정 2026년 9월 5일</p>
-  </div>
-
-  <section class="lang-block" id="en">
-    <h2 style="margin-top:0;">Summary</h2>
-    <div class="callout">
-      <p><strong>MyVideo has no server, collects no analytics, and shows no ads.</strong> Your videos, file names, folder structure, and viewing activity are never sent to the developer or any third party. Data either stays on your device, or travels directly between your device and storage you configure yourself — your device's local storage, or a NAS/WebDAV/SMB server you provide the address and credentials for.</p>
+  <section id="products">
+    <h2>만든 것</h2>
+    <div class="product-card">
+      <div class="product-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7zm5 2v6l5-3-5-3z"/></svg>
+      </div>
+      <div class="product-body">
+        <h3>MyVideo</h3>
+        <p>휴대폰과 TV를 위한 개인 동영상 라이브러리·플레이어. 기기에 저장한 파일이나 직접 등록한 NAS/WebDAV/SMB 서버의 영상을 정리하고 재생합니다.</p>
+        <span class="status-chip">출시 준비 중</span>
+        <p style="margin-top:12px;"><a href="/privacy/">개인정보처리방침 →</a></p>
+      </div>
     </div>
-    <p>MyVideo ("the App") is a video library and player app. This policy explains what data the App accesses and how it is handled.</p>
-
-    <h2>Data stored only on your device</h2>
-    <p>The following stays in the App's private storage on your device and is never transmitted to the developer:</p>
-    <ul>
-      <li><strong>Library metadata</strong> — titles, folder structure, thumbnails generated from your videos, and your "My List" organization.</li>
-      <li><strong>Playback history</strong> — resume position and watched/completed status for each video, so you can continue where you left off.</li>
-      <li><strong>Server connection details</strong> — the address, username, and password you enter for a NAS/WebDAV/SMB server. Passwords are encrypted using the Android Keystore before being saved.</li>
-      <li><strong>Secure Folder PIN</strong> — if you enable the optional Secure Folder feature, your PIN is stored as a salted hash. It cannot be recovered or reversed; losing it means the Secure Folder cannot be unlocked (by design — see the in-app warning shown when you set it up).</li>
-      <li><strong>App settings</strong> — playback preferences, remote/keyboard button mapping, subtitle style, and similar preferences.</li>
-    </ul>
-    <p>None of the above is backed up to any developer-controlled server. (Android's built-in "Auto Backup," which can copy app data to the user's own Google Drive, is separately excluded for Secure Folder data — see the in-app Secure Folder notice for details.)</p>
-
-    <h2>Connections you configure yourself</h2>
-    <p>MyVideo can connect to a NAS, WebDAV, or SMB server that you register yourself, using the address and login you provide. These connections go <strong>directly from your device to that server</strong> — the developer has no access to that server, its contents, or the credentials you use to reach it.</p>
-    <p>If you use Google Cast to send video to a TV or speaker, MyVideo uses Google's Cast SDK to communicate with the Cast device on your local network. This does not involve the developer's infrastructure.</p>
-
-    <h2>Permissions used</h2>
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr><th>Permission</th><th>Why it's needed</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="perm">Storage / media</td><td class="why">To find and play videos stored on your device.</td></tr>
-          <tr><td class="perm">Network access</td><td class="why">To connect to the NAS/WebDAV/SMB servers you register, and to cast to Google Cast devices.</td></tr>
-          <tr><td class="perm">Wake lock</td><td class="why">To keep playback running while the screen is off (e.g., audio-only background playback).</td></tr>
-          <tr><td class="perm">Foreground service</td><td class="why">To keep a local casting relay alive while you're casting a video from your device.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h2>Children's privacy</h2>
-    <p>MyVideo is not directed at children and does not knowingly collect information from children. The App has no account system and no data collection mechanism through which such information could be gathered.</p>
-
-    <div class="change-note">
-      <strong>Changes to this policy.</strong> If MyVideo's data practices change — for example, if a future update adds an optional account-based sync feature — this policy will be updated before that feature is released, describing exactly what new data is involved and how it's protected.
-    </div>
-
-    <h2>Contact</h2>
-    <p>Questions about this policy can be sent to <a href="mailto:support@imaginefactory.kr">support@imaginefactory.kr</a>.</p>
   </section>
 
-  <section class="lang-block" id="ko">
-    <h2 style="margin-top:0;">요약</h2>
-    <div class="callout">
-      <p><strong>MyVideo는 자체 서버가 없고, 분석 도구도 광고도 없습니다.</strong> 사용자의 동영상, 파일명, 폴더 구조, 시청 기록을 개발자나 제3자에게 전송하지 않습니다. 데이터는 기기 안에만 남아 있거나, 사용자가 직접 등록한 저장 위치(기기 내부 저장소, 또는 주소와 계정정보를 직접 입력한 NAS/WebDAV/SMB 서버)와 기기 사이에서 곧바로 오갈 뿐입니다.</p>
-    </div>
-    <p>MyVideo("이 앱")는 동영상 라이브러리·재생 앱입니다. 이 문서는 앱이 어떤 정보에 접근하며 그 정보를 어떻게 다루는지 설명합니다.</p>
-
-    <h2>기기 안에만 저장되는 정보</h2>
-    <p>아래 항목은 앱의 기기 내부 저장 공간에만 남고 개발자에게 전송되지 않습니다:</p>
-    <ul>
-      <li><strong>라이브러리 메타데이터</strong> — 제목, 폴더 구조, 동영상에서 자동 추출한 썸네일, "마이 리스트" 구성.</li>
-      <li><strong>재생 기록</strong> — 이어보기 위치, 시청 완료 여부(각 영상별).</li>
-      <li><strong>서버 연결 정보</strong> — NAS/WebDAV/SMB 서버 등록 시 입력한 주소·아이디·비밀번호. 비밀번호는 Android Keystore로 암호화한 뒤 저장됩니다.</li>
-      <li><strong>보안 폴더 PIN</strong> — 보안 폴더 기능을 켰다면, PIN은 솔트를 더한 해시로만 저장됩니다. 복구·역산이 불가능하며, 분실 시 보안 폴더를 열 수 없습니다(의도된 설계 — 최초 설정 시 앱 내 경고 문구로 안내됨).</li>
-      <li><strong>앱 설정</strong> — 재생 관련 설정, 리모컨/키보드 버튼 매핑, 자막 스타일 등.</li>
-    </ul>
-    <p>위 항목은 어느 것도 개발자가 관리하는 서버로 백업되지 않습니다(안드로이드 기본 "자동 백업" 기능으로 사용자 본인의 구글 드라이브에 앱 데이터가 올라갈 수 있는데, 보안 폴더 관련 데이터는 이 백업 대상에서 별도로 제외됩니다 — 자세한 내용은 앱 내 보안 폴더 안내 참고).</p>
-
-    <h2>사용자가 직접 설정하는 연결</h2>
-    <p>MyVideo는 사용자가 직접 등록한 주소·계정정보로 NAS/WebDAV/SMB 서버에 연결할 수 있습니다. 이 연결은 <strong>사용자의 기기에서 그 서버로 곧바로</strong> 이루어지며, 개발자는 그 서버나 그 안의 내용, 접속에 쓰인 계정정보에 전혀 접근할 수 없습니다.</p>
-    <p>구글 캐스트로 TV나 스피커에 영상을 보낼 때는 구글의 Cast SDK를 이용해 같은 네트워크 안의 캐스트 기기와 통신합니다. 이 과정에도 개발자 쪽 서버는 관여하지 않습니다.</p>
-
-    <h2>사용 권한</h2>
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr><th>권한</th><th>필요한 이유</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="perm">저장소 / 미디어</td><td class="why">기기에 저장된 동영상을 찾아 재생하기 위해.</td></tr>
-          <tr><td class="perm">네트워크 접근</td><td class="why">등록한 NAS/WebDAV/SMB 서버 연결, 구글 캐스트 기기와의 통신을 위해.</td></tr>
-          <tr><td class="perm">화면 유지 (Wake lock)</td><td class="why">화면이 꺼져도 재생(예: 오디오만 백그라운드 재생)이 이어지게 하기 위해.</td></tr>
-          <tr><td class="perm">포그라운드 서비스</td><td class="why">캐스팅 중 로컬 중계 기능이 중간에 끊기지 않게 하기 위해.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h2>아동 개인정보</h2>
-    <p>MyVideo는 아동을 대상으로 하지 않으며, 아동의 정보를 의도적으로 수집하지 않습니다. 계정 시스템도, 정보를 수집할 수단 자체도 없습니다.</p>
-
-    <div class="change-note">
-      <strong>변경 사항.</strong> MyVideo의 데이터 처리 방식이 바뀌면(예: 이후 버전에 계정 기반 동기화 기능이 선택적으로 추가되는 경우) 그 기능이 배포되기 전에 이 문서를 먼저 갱신하고, 어떤 정보가 새로 관여하며 어떻게 보호되는지 정확히 설명합니다.
-    </div>
-
+  <section id="contact">
     <h2>문의</h2>
-    <p>이 문서 관련 문의: <a href="mailto:support@imaginefactory.kr">support@imaginefactory.kr</a></p>
+    <dl class="contact-list">
+      <div class="contact-line">
+        <dt>이메일</dt>
+        <dd><a href="mailto:support@imaginefactory.kr">support@imaginefactory.kr</a></dd>
+      </div>
+    </dl>
   </section>
 </main>
 
 <footer>
-  <span>MyVideo</span>
-  <span>support@imaginefactory.kr</span>
+  <span>상상연구소 (Imagine Factory)</span>
+  <span><a href="/privacy/">Privacy Policy</a></span>
 </footer>
+
+</html>
