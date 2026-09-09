@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Imagine Factory</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="상상연구소(Imagine Factory) — 개인 미디어를 위한 소프트웨어를 만듭니다.">
+<meta name="description" content="상상연구소(Imagine Factory) — MyVideo를 만듭니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -145,42 +145,16 @@
     background: var(--accent-soft);
   }
 
-  /* ---------- hero ---------- */
-  .hero {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 76px 28px 20px;
-  }
-  .lang-block:not(:first-of-type) .hero {
-    padding-top: 64px;
-    margin-top: 56px;
-    border-top: 1px solid var(--border);
-  }
-  .eyebrow {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-faint);
-    margin: 0 0 12px;
-  }
-  .hero h1 {
-    font-size: 40px;
-    margin: 0 0 14px;
-    letter-spacing: -0.01em;
-  }
-  .hero .lede {
-    font-size: 18px;
-    color: var(--text-muted);
-    max-width: 46ch;
-    margin: 0;
-  }
-
   /* ---------- layout ---------- */
   main {
     max-width: 700px;
     margin: 0 auto;
-    padding: 20px 28px 90px;
+    padding: 48px 28px 90px;
+  }
+  .lang-block:not(:first-of-type) main {
+    padding-top: 56px;
+    margin-top: 8px;
+    border-top: 1px solid var(--border);
   }
   section + section {
     margin-top: 56px;
@@ -277,10 +251,8 @@
   footer a { color: var(--text-muted); }
 
   @media (max-width: 560px) {
-    .hero { padding: 52px 18px 16px; }
-    .lang-block:not(:first-of-type) .hero { padding-top: 40px; }
-    .hero h1 { font-size: 29px; }
-    main { padding: 16px 18px 70px; }
+    main { padding: 32px 18px 70px; }
+    .lang-block:not(:first-of-type) main { padding-top: 36px; }
     .topbar-inner { padding: 12px 18px; }
     h2 { font-size: 19px; }
     .product-card { flex-direction: column; }
@@ -305,12 +277,6 @@
 </div>
 
 <div class="lang-block" id="en">
-  <div class="hero">
-    <p class="eyebrow">Imagine Factory</p>
-    <h1>Software for what you imagine</h1>
-    <p class="lede">We build software for personal media — no server, no ads, no accounts. Just your device, and storage you choose yourself.</p>
-  </div>
-
   <main>
     <section>
       <h2>What we've made</h2>
@@ -340,12 +306,6 @@
 </div>
 
 <div class="lang-block" id="ko">
-  <div class="hero">
-    <p class="eyebrow">상상연구소 · Imagine Factory</p>
-    <h1>상상한 것을 만드는 곳</h1>
-    <p class="lede">개인이 소유한 미디어를 더 잘 다루기 위한 소프트웨어를 만듭니다. 서버도, 광고도, 계정도 없이 — 사용자의 기기와 사용자가 지정한 저장소 사이에서만 동작하는 앱을 지향합니다.</p>
-  </div>
-
   <main>
     <section>
       <h2>만든 것</h2>
