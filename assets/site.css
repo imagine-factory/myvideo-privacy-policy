@@ -95,10 +95,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .nav-links a, .lang-links a { text-decoration: none; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border-strong); color: var(--text-muted); letter-spacing: 0.02em; }
 .nav-links a:hover, .lang-links a:hover { border-color: var(--accent); color: var(--accent-strong); background: var(--accent-soft); }
 .nav-links a.current { color: var(--text); border-color: var(--accent); background: var(--accent-soft); pointer-events: none; }
+/* 언어 링크는 페이지 이동이 아니라 같은 페이지 안에서 토글이라 pointer-events는 안 끈다 —
+   지금 언어를 다시 눌러도(이미 선택돼 있어도) 자연스럽게 아무 일도 안 일어나면 된다. */
+.lang-links a.current { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
 
 /* ---------- hero ---------- */
 .hero { max-width: 700px; margin: 0 auto; padding: 64px 28px 8px; }
-.lang-block:not(:first-of-type) .hero, section.lang-block:not(:first-of-type) { padding-top: 52px; margin-top: 48px; border-top: 1px solid var(--border); }
 .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }
 .status-chip { display: inline-flex; align-items: center; gap: 6px; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-faint); border: 1px solid var(--border-strong); border-radius: 999px; padding: 3px 10px; }
 .status-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--text-faint); }
@@ -169,7 +171,6 @@ footer a { color: var(--text-muted); }
 
 @media (max-width: 560px) {
   .hero { padding: 44px 18px 6px; }
-  .lang-block:not(:first-of-type) .hero, section.lang-block:not(:first-of-type) { padding-top: 32px; }
   .hero h1 { font-size: 27px; }
   main { padding: 16px 18px 70px; }
   main.doc-main { padding-top: 40px; }
