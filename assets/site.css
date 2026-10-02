@@ -172,7 +172,7 @@ strong { font-weight: 600; }
 .in-player li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
 .in-player li::before { content: ""; width: 6px; height: 6px; margin-top: 11px; border-radius: 50%; background: var(--brand); flex-shrink: 0; }
 
-.cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.cta-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 8px; font-size: 14.5px; font-weight: 500; text-decoration: none; border: 1px solid var(--border-strong); color: var(--text); background: var(--surface); }
 .btn:hover { border-color: var(--brand); color: var(--brand-deep); background: var(--accent-soft); }
 
@@ -219,3 +219,11 @@ footer a { color: var(--text-muted); }
   .feature-grid { grid-template-columns: 1fr; }
   main { padding-bottom: 72px; }
 }
+
+/* ---------- Google Play 배지 ---------- */
+/* 공식 PNG에는 가이드라인이 요구하는 여백(배지 높이의 1/4)이 이미 들어 있다.
+   그래서 margin을 따로 주지 않고 height만 지정한다 — 색·비율·요소 배치를
+   건드리면 상표 가이드라인 위반이다. 60px이면 실제 배지 높이가 40px로
+   최소 28px 규정을 넘긴다. */
+.play-badge { display: inline-flex; align-items: center; text-decoration: none; }
+.play-badge img { height: 60px; width: auto; display: block; }
