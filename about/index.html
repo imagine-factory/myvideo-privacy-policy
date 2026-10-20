@@ -18,6 +18,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css?v=5">
+<style>
+main section.about-steps { max-width: 980px; }
+.hero h1 { word-break: keep-all; }
+.steps-title { margin: 28px 0 6px; }
+.steps-sub { color: var(--text-muted); margin: 0 0 24px; }
+.steps { display: grid; grid-template-columns: 1fr 24px 1fr 24px 1fr; align-items: stretch; gap: 10px; margin: 0; padding: 0; list-style: none; max-width: 980px; }
+.steps li { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 22px 24px; box-shadow: 0 1px 2px var(--shadow); }
+.steps .num { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 3px 10px; display: inline-block; }
+.steps .en { display: block; margin: 14px 0 2px; font-size: 13px; letter-spacing: 0.02em; color: var(--text-faint); font-weight: 500; }
+.steps h3 { font-size: 18px; margin: 0 0 10px; }
+.steps p { margin: 0; color: var(--text-muted); font-size: 15px; line-height: 1.7; }
+.steps .arrow { background: none; border: 0; box-shadow: none; padding: 0; display: flex; align-items: center; justify-content: center; color: var(--brand); font-size: 22px; }
+@media (max-width: 900px) {
+  .steps { grid-template-columns: 1fr; gap: 6px; max-width: 760px; }
+  .steps-title { margin-top: 0; }
+  .steps .arrow { transform: rotate(90deg); height: 28px; }
+}
+</style>
 </head>
 <body class="page">
 
@@ -83,25 +101,45 @@
   </div>
 </div>
 
-<main class="doc-main">
-  <div class="doc-header">
+<div class="lang-block" id="en">
+  <div class="hero">
     <p class="eyebrow">About</p>
+    <h1>Imagine Factory is a company that turns new ideas into software products.</h1>
   </div>
+  <main>
+    <section class="about-steps">
+    <h2 class="steps-title">How We Build</h2>
+    <p class="steps-sub">From an idea to a product</p>
+    <ol class="steps">
+      <li><span class="num">01</span><span class="en">Imagine &amp; Build</span><h3>From idea to product</h3><p>We take ideas found in everyday life, shape them, and work with AI to turn them into software that actually runs.</p></li>
+      <li class="arrow" aria-hidden="true">→</li>
+      <li><span class="num">02</span><span class="en">Use &amp; Improve</span><h3>We use it ourselves</h3><p>We use what we make, find what gets in the way, and keep improving it from real-world experience.</p></li>
+      <li class="arrow" aria-hidden="true">→</li>
+      <li><span class="num">03</span><span class="en">Make It Useful</span><h3>Useful in everyday life</h3><p>We care less about new technology for its own sake than about what actually helps. We make products anyone can use in daily life.</p></li>
+    </ol>
+    </section>
+  </main>
+</div>
 
-  <section class="lang-block" id="en">
-    <div class="doc-header"><h1>Imagine Factory</h1></div>
-    <p class="lede" style="margin-bottom:24px;">Imagine Factory is a company that turns new ideas into software products.</p>
-    <p>We shape an idea,<br>build it together with AI,<br>and grow it into a better product by using it ourselves.</p>
-    <p>So it comes down to one question:<br>is what we made genuinely useful in people's everyday lives?</p>
-  </section>
-
-  <section class="lang-block" id="ko" hidden>
-    <div class="doc-header"><h1>상상연구소</h1></div>
-    <p class="lede" style="margin-bottom:24px;">상상연구소는 새로운 생각을 소프트웨어 제품으로 만드는 회사입니다.</p>
-    <p>아이디어를 구체화하고,<br>AI와 함께 만들고,<br>직접 사용하며 더 나은 제품으로 발전시킵니다.</p>
-    <p>그래서 기준은 하나입니다 —<br>우리가 만든 제품이 사람들의 일상에서 실제로 쓸 만한가.</p>
-  </section>
-</main>
+<div class="lang-block" id="ko" hidden>
+  <div class="hero">
+    <p class="eyebrow">About</p>
+    <h1>상상연구소는 새로운 생각을 소프트웨어 제품으로 만드는 회사입니다.</h1>
+  </div>
+  <main>
+    <section class="about-steps">
+    <h2 class="steps-title">How We Build</h2>
+    <p class="steps-sub">생각을 제품으로 만드는 과정</p>
+    <ol class="steps">
+      <li><span class="num">01</span><span class="en">Imagine &amp; Build</span><h3>아이디어를 제품으로</h3><p>일상에서 발견한 아이디어를 구체화하고, AI와 협업해 실제로 작동하는 소프트웨어 제품으로 만듭니다.</p></li>
+      <li class="arrow" aria-hidden="true">→</li>
+      <li><span class="num">02</span><span class="en">Use &amp; Improve</span><h3>직접 사용하며 개선</h3><p>우리가 직접 사용하면서 불편한 점을 찾고, 실제 사용 환경에서 얻은 경험을 바탕으로 끊임없이 개선합니다.</p></li>
+      <li class="arrow" aria-hidden="true">→</li>
+      <li><span class="num">03</span><span class="en">Make It Useful</span><h3>일상에 유용한 제품</h3><p>새로운 기술 자체보다 실제로 도움이 되는 경험을 중요하게 생각합니다. 누구나 일상에서 유용하게 쓸 수 있는 제품을 만듭니다.</p></li>
+    </ol>
+    </section>
+  </main>
+</div>
 
 <footer>
   <span>상상연구소 (Imagine Factory)</span>
